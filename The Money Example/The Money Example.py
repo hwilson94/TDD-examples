@@ -5,6 +5,11 @@ Created on Mon Dec 28 20:27:09 2015
 @author: Harry
 """
 
+
+Dollar = 1
+DollarCurrency = 'USD'
+Franc = 1.5 * Dollar
+FrancCurrency = 'CHF'
 Money = (Dollar, Franc)
 
 
@@ -34,6 +39,11 @@ def testEquality():
     assert Money[1](5) == Money[1](5)
     assert Money[1](5) != Money[1](6)
     assert Money[1](5) != Money[0](5)
+
+
+def testCurrency():
+    assert DollarCurrency == str(USD)
+    assert FrancCurrency == str(CHF)
 
 
 def Dollar(a):
