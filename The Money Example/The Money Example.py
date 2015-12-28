@@ -5,22 +5,23 @@ Created on Mon Dec 28 20:27:09 2015
 @author: Harry
 """
 
+Money = (Dollar, Franc)
+
 
 def testDollarMultiplication():
     """test multiplication for Dollar"""
-    assert Dollar(10) == FiveTimes(2)
-    assert Dollar(15) == FiveTimes(3)
+    assert Money[0](10) == FiveTimes(2)
+    assert Money[0](15) == FiveTimes(3)
 
 
 def testFrancMultiplication():
     """test multiplication for Franc"""
-    assert Franc(10) == FiveTimes(2)
-    assert Franc(15) == FiveTimes(3)
+    assert Money[1](10) == FiveTimes(2)
+    assert Money[1](15) == FiveTimes(3)
 
 
 def testMoneyMultiplication():
     """test multiplication for both Franc and Dollar at once"""
-    Money = (Dollar, Franc)
     for currency in Money:
         assert currency(10) == FiveTimes(2)
         assert currency(15) == FiveTimes(3)
@@ -28,10 +29,11 @@ def testMoneyMultiplication():
 
 def testEquality():
     """testing whether the equality function works for different currencies"""
-    assert Dollar(5) == Dollar(5)
-    assert Dollar(5) != Dollar(6)
-    assert Franc(5) == Franc(5)
-    assert Franc(5) != Franc(6)
+    assert Money[0](5) == Money[0](5)
+    assert Money[0](5) != Money[0](6)
+    assert Money[1](5) == Money[1](5)
+    assert Money[1](5) != Money[1](6)
+    assert Money[1](5) != Money[0](5)
 
 
 def Dollar(a):
