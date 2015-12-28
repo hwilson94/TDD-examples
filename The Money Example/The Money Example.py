@@ -7,13 +7,13 @@ Created on Mon Dec 28 20:27:09 2015
 
 
 def testDollarMultiplication():
-    """no explanation needed"""
+    """test multiplication for Dollar"""
     assert Dollar(10) == FiveTimes(2)
     assert Dollar(15) == FiveTimes(3)
 
 
 def testFrancMultiplication():
-    """no explanation needed"""
+    """test multiplication for Franc"""
     assert Franc(10) == FiveTimes(2)
     assert Franc(15) == FiveTimes(3)
 
@@ -28,14 +28,10 @@ def testMoneyMultiplication():
 
 def testEquality():
     """testing whether the equality function works for different currencies"""
-    DollarFive = 5
-    DollarSix = 6
-    FrancFive = 5
-    FrancSix = 6
-    assert DollarFive == DollarFive
-    assert DollarFive != DollarSix
-    assert FrancFive == FrancFive
-    assert FrancFive != FrancSix
+    assert Dollar(5) == Dollar(5)
+    assert Dollar(5) != Dollar(6)
+    assert Franc(5) == Franc(5)
+    assert Franc(5) != Franc(6)
 
 
 def Dollar(a):
